@@ -33,7 +33,14 @@ export type Execution = {
   date: string;
   evaluation?: 'good' | 'bad';
   messages: Message[] | undefined; // left for backward compatibility
+  folderId?: string | null;
 };
+
+export type Folder = {
+  id: string;
+  name: string;
+  date: string;
+}
 
 export type ExecutionParams = {
   model: SelectItem;

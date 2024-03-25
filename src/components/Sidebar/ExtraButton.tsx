@@ -1,4 +1,4 @@
-import { DotsHorizontalIcon, TrashIcon } from '@radix-ui/react-icons';
+import { DotsHorizontalIcon, Pencil1Icon, TrashIcon } from '@radix-ui/react-icons';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { on } from 'events';
 import React, { FC } from 'react';
@@ -6,13 +6,19 @@ import { translate } from '../../utils/translate';
 
 interface ExtraButtonProps {
   onDelete: () => void;
+  onEdit: () => void;
 }
 
-export const ExtraButton: FC<ExtraButtonProps> = ({ onDelete }) => {
-  const handleClick = (event: React.MouseEvent) => {
+export const ExtraButton: FC<ExtraButtonProps> = ({ onDelete, onEdit }) => {
+  const handleDeleteClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     onDelete();
   };
+
+  const handleEditClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    onEdit();
+  }
 
   return (
     <div className="relative inline-block text-left">
@@ -30,10 +36,17 @@ export const ExtraButton: FC<ExtraButtonProps> = ({ onDelete }) => {
           <PopoverPrimitive.Arrow className="fill-current text-gray-900" />
           <button
             className="inline-flex h-full w-full items-center gap-2 rounded-md p-2 hover:bg-neutral-800"
-            onClick={handleClick}
+            onClick={handleDeleteClick}
           >
             <TrashIcon className="h-5 w-5" />
             {translate('DELETE')}
+          </button>
+          <button
+            className='inline-flex h-full w-full items-center gap-2 rounded-md p-2 hover:bg-neutral-800'
+            onClick={handleEditClick}
+          >
+            <Pencil1Icon className='h-5 w-5' />
+            {translate('EDIT')}
           </button>
         </PopoverPrimitive.Content>
       </PopoverPrimitive.Root>

@@ -34,6 +34,7 @@ export const useExecutionManagement = () => {
       },
       messages: undefined,
       agentMessages: agentMessages,
+      folderId: null,
     };
 
     selectExecution(execution.id);

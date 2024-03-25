@@ -1,6 +1,7 @@
 {
   "AGENT": "エージェント",
   "DELETE": "消去",
+  "EDIT": "編集",
   "DESCRIPTION_BABYAGI": "この BabyAGI は Web を検索してスクレイピングすることができます",
   "FIRST_TASK": "最初のタスク",
   "FOR_MORE_DETAILS": "詳細については...",
@@ -9,6 +10,7 @@
   "LANGUAGE": "言語",
   "MODEL": "モデル",
   "NEW_OBJECTIVE": "新しい目標",
+  "NEW_FOLDER": "新しいフォルダ",
   "New": "New",
   "OPENAI_API_KEY": "OpenAI APIキー",
   "REFER_TO_THE_ORIGINAL_PAPER": "原著論文をご参照ください。",

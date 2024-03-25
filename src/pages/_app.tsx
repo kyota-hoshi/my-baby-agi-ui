@@ -7,6 +7,7 @@ import { ExecutionProvider } from '@/hooks/useExecution';
 import { ExecutionStatusProvider } from '@/hooks/useExecutionStatus';
 import { appWithTranslation } from 'next-i18next';
 import nextI18NextConfig from '../../next-i18next.config.js';
+import { FolderProvider } from '@/hooks/useFolder';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const locale =
@@ -18,11 +19,13 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider attribute="class" defaultTheme="light">
       <ExecutionProvider>
         <ExecutionStatusProvider>
-          <div dir={dir}>
-            <Component {...pageProps} />
-            <Toaster theme="dark" />
-          </div>
-          <Analytics />
+          <FolderProvider>
+            <div dir={dir}>
+              <Component {...pageProps} />
+              <Toaster theme="dark" />
+            </div>
+            <Analytics />
+          </FolderProvider>
         </ExecutionStatusProvider>
       </ExecutionProvider>
     </ThemeProvider>

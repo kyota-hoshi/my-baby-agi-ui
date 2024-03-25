@@ -9,7 +9,7 @@ import { FC } from 'react';
 
 export const SidebarFooter: FC = () => {
   return (
-    <div className="flex flex-row items-center gap-2 border-t border-neutral-600 pr-2 pt-2">
+    <div className=" gap-3 flex flex-row items-center border-t border-neutral-600 pr-2 pt-2">
       <SidebarSettings />
       <Link
         href="https://twitter.com/miiura"
